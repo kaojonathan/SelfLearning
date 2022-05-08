@@ -1,0 +1,46 @@
+Django
+    free open-source framework for building web apps with python
+    "Batteries included" means it comes with features such as admin site, ORM, Authetication, ...
+
+HTTP
+    when a client makes a request to the server, the server has two main options
+        1. send back the html
+        2. send back only the data and have the client generate the html page
+            a. this approach is better since it frees up the server to handle more clients
+            b. react, angular, vue, ... are tools that generate these webpages for the client on the frontend
+
+On the server, we can provide endpoints for the client to interact with to get or save various pieces of data
+    these APIS allow clients to interact with the backend
+
+Setup
+
+    $ pipenv install django
+
+    $ pipenv shell 
+        activates the virtual environment
+
+    $ django-admin 
+        set up admin commands
+
+    $ django-admin startproject storefront .
+
+    // use manage.py as admin now
+    // e.g. $ python manage.py runserver
+    // will default to port 8000
+
+Starting the App (if integrated terminal not set-up)
+
+$ pipenv shell
+$ python3 manage.py runserver
+
+Create an App
+
+$ python manage.py startapp ${appName}
+
+    admin.py module - defines admin interface
+    apps.py module - used for configuring the app
+    models.py module - define the models
+    test.py module - used to write the unit tests
+
+Register the app in the settings.py folder of the main-app (storefront)
+    add it under INSTALLED_APPS as 'appName'
