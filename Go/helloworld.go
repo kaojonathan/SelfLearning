@@ -3,12 +3,17 @@ package main
 // declare a main package
 // package groups functions in the same directory
 
-import "fmt"
+import (
+	"fmt"
 
-// package for text formatting
+	"rsc.io/quote"
+) // package for text formatting
+
+// when using external pckg, use `go mod tidy` to add external module to go.mod
 
 func main() {
 	fmt.Println("Hello, World!")
+	fmt.Println(quote.Go())
 }
 
 /*
