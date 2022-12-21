@@ -3,6 +3,8 @@ package main
 // declare a main package
 // package groups functions in the same directory
 
+// go.sum is used for authenticating the module
+
 import (
 	"fmt"
 
