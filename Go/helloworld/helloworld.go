@@ -28,4 +28,11 @@ func main() {
 	Notes
 		The go.mod is for dependency tracking:
 		Create with `go mod init example/hello` where example/hello is the module's path
+
+		When using the local greetings package, it isn't published online so we use the "replace line"
+		in go.mod to redirect to local package
+
+		Remember to `go mod tidy` after importing a new package
+
+		`go run .` to run the file
 */
