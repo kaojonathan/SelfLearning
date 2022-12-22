@@ -9,6 +9,8 @@ import (
 	"fmt"
 
 	"rsc.io/quote"
+
+	"examples/greetings"
 ) // package for text formatting
 
 // when using external pckg, use `go mod tidy` to add external module to go.mod
@@ -16,6 +18,10 @@ import (
 func main() {
 	fmt.Println("Hello, World!")
 	fmt.Println(quote.Go())
+
+	// call greetings local package function
+	message := greetings.Hello("Alex")
+	fmt.Println(message)
 }
 
 /*
