@@ -7,6 +7,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 
 	"rsc.io/quote"
 
@@ -16,11 +17,19 @@ import (
 // when using external pckg, use `go mod tidy` to add external module to go.mod
 
 func main() {
+	// Set properties of the logger: entry log prefix and flag to disable timestamp, source file, line number
+	log.SetPrefix("greetings: ")
+	log.SetFlags(0)
+
 	fmt.Println("Hello, World!")
 	fmt.Println(quote.Go())
 
 	// call greetings local package function
-	message := greetings.Hello("Alex")
+	message, err := greetings.Hello("Alex")
+	// if error returned, print to console and exit program
+	if err != nil {
+		log.Fatal(err)
+	}
 	fmt.Println(message)
 }
 
