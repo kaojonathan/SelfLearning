@@ -31,6 +31,13 @@ func main() {
 		log.Fatal(err)
 	}
 	fmt.Println(message)
+
+	// call the random greetings function
+	message2, err2 := greetings.RandomHello("Justin")
+	if err2 != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(message2)
 }
 
 /*

@@ -3,6 +3,8 @@ package greetings
 import (
 	"errors"
 	"fmt"
+	"math/rand"
+	"time"
 )
 
 // Hello returns a greeting for the named person.
@@ -20,4 +22,35 @@ func Hello(name string) (string, error) {
 
 	// nil means no error
 	return message, nil
+}
+
+// Note that function names that are uppercase are those that are visible
+func RandomHello(name string) (string, error) {
+	if name == "" {
+		return "", errors.New("empty name")
+	}
+	// Create random formatted message
+	message := fmt.Sprintf(randomFormat(), name)
+	return message, nil
+}
+
+// init sets initial values for variables used in the funciton
+// Used to seed the rand pkg with the current time
+func init() {
+	rand.Seed(time.Now().UnixNano())
+}
+
+// randomFormat returns one of a set of greeting messages. The returned
+// message is selected at random.const
+func randomFormat() string {
+	// A slice of message formats
+	formats := []string{
+		"Hi, %v. Welcome!",
+		"Great to see you, %v!",
+		"Hail, %v! Well met!",
+	}
+
+	// return a randomly selected message format by specifying
+	// a random index for the slice
+	return formats[rand.Intn(len(formats))]
 }
