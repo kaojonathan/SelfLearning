@@ -54,3 +54,22 @@ func randomFormat() string {
 	// a random index for the slice
 	return formats[rand.Intn(len(formats))]
 }
+
+// Hellos returns a map that gives a greeting to each name
+func Hellos(names []string) (map[string]string, error) {
+	// map to associate name with messages
+	// map[key_type]value_type
+	messages := make(map[string]string)
+	// loop thru received slice of names, calling randomHello() for each
+	// 'range' returns two values - index of current item and copy of items value (like python enumerate)
+	// index is not used in this context so use Go blank identifier _ to ignore it
+	for _, name := range names {
+		message, err := RandomHello(name)
+		if err != nil {
+			return nil, err
+		}
+		// in the map, associarte retreived message with the name
+		messages[name] = message
+	}
+	return messages, nil
+}

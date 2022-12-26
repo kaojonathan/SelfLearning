@@ -38,6 +38,15 @@ func main() {
 		log.Fatal(err)
 	}
 	fmt.Println(message2)
+
+	// slice of names observe that after initialization, the map will order itself
+	names := []string{"Martha", "Samuel", "Jack", "Chun"}
+
+	messages, err := greetings.Hellos(names)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(messages)
 }
 
 /*
