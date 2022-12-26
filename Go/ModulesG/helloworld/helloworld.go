@@ -5,7 +5,7 @@ package main
 
 // go.sum is used for authenticating the module
 
-// `go build`` to build an executable - ./helo to run
+// `go build`` to build an executable - ./hello to run
 
 // Alternatively, install the executable so it can be run without specifying the path
 // `go list -f '{{.Target}}'` to find the go Install path
