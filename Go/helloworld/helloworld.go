@@ -5,6 +5,13 @@ package main
 
 // go.sum is used for authenticating the module
 
+// `go build`` to build an executable - ./helo to run
+
+// Alternatively, install the executable so it can be run without specifying the path
+// `go list -f '{{.Target}}'` to find the go Install path
+// add the Go install directory to system's shell path: `export PATH=$PATH:/path/to/your/install/directory``
+// then `go install` and run using the application name `hello`
+
 import (
 	"fmt"
 	"log"
