@@ -14,6 +14,14 @@ func main() {
 		fmt.Fprintf(w, "Hello World, you've requested the path: %s\n", r.URL.Path)
 	})
 
+	// Process Dynamic Req:
+	// You can read GET parameters with `r.URL.Query().Get("key")`
+	// Or get POST fields from HTML form with r.FormValue("key")
+
+	// Serve Static Assets
+	// use inbuilt FileServer and point it to url path
+	// fs := http.FileServer(http.Dir("static/"))
+
 	fmt.Println("Server Running on Port 80!")
 	http.ListenAndServe(":80", nil)
 }
